@@ -1,4 +1,4 @@
-<div class="ui link cards pr-20 mt-15">
+<div class="ui link cards pr-20 mt-15 mb-0">
   <div class="ui fluid card mouse-pointer">
     <div class="image" (click)="onAction(batch)" 
     appTelemetryInteract [telemetryInteractObject]="{id:batch.identifier,type:'batch',ver:'1.0'}" [telemetryInteractEdata]="{id:'batchId',type:'click',pageid:'course-batch'}">
@@ -7,16 +7,16 @@
         <img src="{{'assets/images/default.png' | cdnprefixurl}}">
       </div>
       <div class="batch-content" suiPopup popupText="{{batch.name}}">
-        <span class="batch-content-description">{{batch.name | slice:0:20}}
-            <i class="ellipsis horizontal icon" *ngIf="batch.name && batch.name.length >= 20" ></i>
+        <span class="batch-content-description batch-card-ellipsis">{{batch.name | slice:0:20}}
+            <!-- <i class="ellipsis horizontal icon" *ngIf="batch.name && batch.name.length >= 20" ></i> -->
         </span>
       </div>
     </div>
     <div *ngIf="batch.userName" class="content batch-content-meta">
-      By {{batch.userName}}<br/>
+      <span class="mb-5 batch-card-ellipsis">By {{batch.userName}}</span>
       <i class="right floated large unlock alternate icon" *ngIf="batch.enrollmentType === 'open'">
-      </i><br>
-      <span *ngIf="batch.courseAdditionalInfo && batch.courseAdditionalInfo.courseName">
+      </i>
+      <span *ngIf="batch.courseAdditionalInfo && batch.courseAdditionalInfo.courseName" class="batch-card-ellipsis batch-course-name">
       {{resourceService.frmelmnts.lbl.courseName}}: {{batch.courseAdditionalInfo.courseName}}
       </span>
     </div>
