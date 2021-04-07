@@ -2725,6 +2725,12 @@ html[data-theme='Darkmode'][layout='joy'] {
     background: #222222 !important;
     color: #ffffff;
   }
+  .content-preference__info {
+    @include respond-below(md) {
+      background: #222222 !important;
+      color: #ffffff;
+    } 
+  }
 
   .ui.selection.sbt-dropdown.dropdown .menu>div .item:hover,
   .ui.selection.sbt-dropdown.dropdown .menu>div .item.active {
